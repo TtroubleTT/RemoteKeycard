@@ -96,7 +96,7 @@ namespace RemoteKeycard
             {
                 if (item.Base is KeycardItem keycard)
                 {
-                    bool allowed = keycard.Permissions.HasFlagFast(ev.Chamber.RequiredPermissions);
+                    bool allowed = keycard.Permissions.HasFlagFast((KeycardPermissions)ev.InteractingChamber.RequiredPermissions);
                     //Log.Debug($"Keycard with permissions {keycard.Permissions} attempted to open locker with required permissions {ev.Chamber.RequiredPermissions} (allowed: {allowed})");
                     return allowed;
                 }
